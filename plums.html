@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Visualizing Poems</title>
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="rita-full.js"></script>
+	<script src="script.js"></script>
+</head>
+
+
+<body>
+<header>
+	<a href="/"><h1><span>Visualizing</span><br>Poems</h1></a>
+	<div id="controls">
+		<div id="tools">
+			<div id="pos" class="on">Parts of Speech</div>
+			<div id="syl" class="on">Syllables</div>
+			<div id="mtr" class="on">Stress</div>
+			<div id="txt">Text</div>
+		</div>
+
+		<div id="colophon">
+			Built with <a href="http://rednoise.org/rita/" target="_blank">RiTa</a>.
+		</div>
+	</div>	
+</header>
+<main>
+	<button class="menu">
+	    <span class="bar"></span>
+	    <span class="bar"></span>
+	    <span class="bar"></span>
+	</button>
+	<nav>
+		<h4>Examples</h4>
+		<a href="/"><span class="poemTitle">The Red Wheelbarrow</span> <span class="poemAuthor">Williams Carlos Williams</span></a>
+		<a href="plums.html" class="active"><span class="poemTitle">This is Just to Say</span> <span class="poemAuthor">E. E. Cummings</span></a>
+		<a href="fairysong.html"><span class="poemTitle">The Fairy Song</span> <span class="poemAuthor">Williams Shakespeare</span></a>
+		<a href="wildgeese.html"><span class="poemTitle">Wild Geese</span> <span class="poemAuthor">Mary Oliver</span></a>
+		<a href="form.html"><button> Enter your own text </button></a>
+	</nav>
+	<section>
+		<div class="poem grammar syllables metre rhyme hideText">
+			I have eaten<br>
+			the plums<br>
+			that were in<br>
+			the icebox<br>
+			<br>
+			and which<br>
+			you were probably<br>
+			saving<br>
+			for breakfast<br>
+			<br>
+			Forgive me<br>
+			they were delicious<br>
+			so sweet<br>
+			and so cold
+		</div>
+	</section>
+</main>
+<script>
+	html = $(".poem").html();
+	processInput(html);
+</script>
+</body>
+
+</html>

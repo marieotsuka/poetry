@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700');
+
+body { 
+	font-family: "Old Standard TT", Georgia, serif;
+  	color: #333;
+  	margin: 0;
+}	
+
+h1,h2,h3,h4{
+	margin: 0;
+	line-height: 1;
+}
+h1 {
+	font-size: 2.5em;
+	line-height: 1;
+	box-sizing: border-box;
+	padding-left: 1.5em;
+}
+
+h1 span{
+	position: relative;
+	left: -0.2rem;
+}
+h2 {
+	font-size: 1.2em;
+	margin-top:.4em;
+}
+
+h3, .poemAuthor, label, button{
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1.2;
+	margin-top: .5em;
+}
+
+h4{
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+	transition: color 300ms;
+}
+
+a:hover{
+	color: #DED7C6;
+}
+
+
+
+/*header & navigation*/
+
+header {
+	overflow: auto;
+	padding: 2.5em 0;
+	position: fixed;
+	width: 25%;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+nav{
+	overflow: hidden;
+}
+
+nav a{
+	display: inline-block;
+	float: left;
+	margin: .5em 2.5em 0 0;
+	font-size: 18px;
+}
+
+nav a.active .poemTitle{
+	font-weight: bold;
+}
+
+/*nav a.active .poemAuthor{
+	font-size: 18px;
+}*/
+
+.poemTitle, .poemAuthor{
+	display: block;
+}
+
+main{
+	position: absolute;
+	margin-left: 25%;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding-top: 3em;
+}
+/*toggle tools*/
+
+#controls {
+	margin: 4.4em 0 0 3em;
+}
+
+#tools {
+	font-size: 18px;
+}
+
+#tools div:before{
+	content: "\00BB \0020"
+}
+
+#tools div{
+	margin-top: .5em;
+	transition: color 300ms;
+}
+
+#tools div:hover{
+	color: #DED7C6;
+	cursor: pointer;
+}
+
+.on{
+	font-weight: bold;
+}
+
+
+/*general*/
+
+section{
+	padding: 1.5em 0;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.poem{
+	font-size: 2em;
+	display: none;
+	width: 100%;
+}
+
+.poem div{
+	mix-blend-mode: multiply;
+}
+
+.poem div{
+	display: inline-block;
+	margin-top: 1em;
+	position: relative;
+}
+
+
+/*toggle text*/
+
+.hideText .text{
+	color: transparent;
+}
+
+.hideText.metre.grammar .text{
+	display: inline;
+}
+
+.hideText.metre .text{
+	display: none;
+}
+
+.hideText.metre .m{
+	position: static;
+}
+
+.hideText.grammar.metre .m{
+	position: absolute;
+}
+
+/*GRAMMAR*/
+/*default*/
+.grammar div {
+	background: #D0CBD3;
+}
+
+/*articles*/
+.grammar [class*="dt"]{
+	background: #B97599;
+}
+/*nouns and pronouns*/
+.grammar [class*="nn"], .grammar .prp, .grammar .wp{
+	background: #97E1E6;
+}
+
+/*cut words*/
+.grammar .cutL{
+	border-right: 5px dotted #fff;
+}
+
+.grammar .cutR{
+	border-left: 5px dotted #fff;
+}
+/*verb*/
+.grammar [class*="vb"], .grammar .md{
+	background: #F67D61;
+}
+
+/*verb*/
+.grammar .vbg, .grammar .vbn{
+	background: #FF5D5D;
+}
+
+/*adjectives*/
+.grammar [class*="jj"], .grammar .prpss{
+	background: #678DCC;
+}
+/*prepositions*/
+.grammar .in{
+	background: #EEB54A;
+}
+/*adverbs*/
+.grammar [class*="rb"]{
+	background: #E0F19E;
+}
+/*conjunctions*/
+.grammar .cc{
+	background: #3CAF81;
+}
+
+/*verb*/
+.grammar .to{
+	background: #3CAF81;
+}
+
+
+
+.s1::before, .s2::before, .s3::before, .s5::before{
+	position: absolute;
+	bottom: -18px;
+}
+
+
+.syllables .s2{
+	transform: scale(2);
+}
+
+.syllables .s2 .text{
+	transform: scale(.5);
+}
+
+.syllables .s3{
+	transform: scale(3);
+}
+
+.syllables .s5{
+	transform: scale(5);
+}
+
+
+
+.m {
+	font-size: 16px;
+	position: absolute;
+	top: -12px;
+	left: 0;
+	display: none;
+	color: #666;
+}
+
+.metre .m {
+	display: inline-block;
+}
+
+/*rhymes*/
+
+.rhyme .r{
+	transform: rotate(15deg);
+}
+
+/*input form*/
+
+form {
+	position: absolute;
+	z-index: 10;
+	width: 85%;
+}
+
+label, input, textarea{
+	float: left;
+	display: inline-block;
+	background: transparent;
+}
+
+label{
+	margin-bottom: 5px;
+}
+
+
+input, textarea{
+	background: transparent;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: "Old Standard TT", Georgia, serif;
+	float: left;
+	line-height: 1.5;
+	padding: 5px;
+	transition: border, background 400ms;
+}
+input:active, input:focus, textarea:active, textarea:focus, button:active, button:focus{
+	background: #fff;
+	outline: none;
+	border: 1px solid #aaa;
+}
+
+.field{
+	margin-top: 1em;
+	overflow: auto;
+}
+
+label {
+	width: 150px;
+}
+
+input {
+	width: 300px;
+	padding: 5px;
+}
+
+textarea{
+    width: 500px;
+    height: 300px;
+}
+
+button:hover{
+	background: #fff;
+	color: #DED7C6;
+}
+
+button{
+    box-sizing: border-box;
+    font-family: "Old Standard TT", Georgia, serif;
+    margin-top: 1em;
+    padding: 8px 15px;
+    background: transparent;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    text-align: center;
+    transition: color, background 300ms;
+}
+
+form button{
+	margin-left: 150px;
+}
+
+.heading{
+	margin-bottom: 2em;
+}
+
+#colophon {
+	position: absolute;
+	bottom: 0;
+	padding: 2em 0;
+}
+
+/*mobile nav*/
+
+button.menu {
+	width: 48px;
+	text-align: center;
+	padding: 5px;
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	display: none;
+	z-index: 100;
+}
+
+
+.bar {
+	display: block;
+	height: 3px;
+	background-color: #666;
+	margin: 5px;
+}
+
+nav.mobile {
+	display: none;
+	width: 100%;
+	margin: 0 0 1.5em 0;
+}
+
+
+nav.mobile a {
+	display: block;
+	clear: both;
+	margin-left: 0;
+	margin-top: 1em;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+	h1 {
+		width: 100%;
+		padding-left: 1em;
+	}
+
+	#controls{
+		margin-top: 1em;
+	}
+
+	#colophon{
+		display: none;
+	}
+		
+
+	header {
+		width: 100%;
+		height: auto;
+	}
+
+	main {
+		padding-top: 0;
+		left: 280px;
+		top: 50px;
+		margin-left: 0;
+	}
+	button.menu {
+		display: block;
+	}
+	nav a{
+		display: none;
+	}
+
+	nav a.active{
+		display: block;
+	}
+
+	nav a.active button{
+		margin-top: 0;
+	}
+
+	label, input, textarea{
+		clear: both;
+	}
+
+	textarea{
+		width: 100%;
+	}
+	form button{
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	nav.mobile {
+		background: #fff;
+		position: absolute;
+		z-index: 50;
+		top: 0px;
+		left: 0px;
+		padding: 1.5em;
+		margin: 0;
+		margin-right: 1em;
+	}
+
+	#controls{
+		margin-left: 1.5em;
+	}
+
+	h1 {
+		padding-left: 30px;
+	}
+	main {
+		position: static;
+		padding-top: 0;
+		margin: 0 1.5em;
+	}
+
+	header{
+		position: static;
+		z-index: 30;
+	}
+
+	input, textarea{
+		width: 100%;
+	}
+}
+
+@media print {
+  h1, h4, #colophon{
+  	display: none;
+  }
+
+  header {
+  	width: 200px;
+  	font-size: 12px;
+  }
+
+  #controls {
+  	margin-top: 7em;
+  }
+
+  .on {
+  	font-weight: normal;
+  }
+
+  p.heading{
+  	margin-top: 0;
+  }
+
+  main {
+  	margin-left: 300px;
+  }
+
+  nav a{
+  	display: none;
+  }
+
+  nav a.active{
+  	display: block;
+  }
+
+  #tools div{
+  	display: none;
+  }
+
+  #tools div.on{
+  	display: block;
+  }
+}
